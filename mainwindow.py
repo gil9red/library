@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from mainwindow_ui import Ui_MainWindow
+from docdialog import DocDialog
 from PySide.QtGui import *
 from PySide.QtCore import *
 from PySide.QtSql import *
@@ -24,17 +25,17 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # self.docsModel = QSqlTableModel()
-        self.docsModel = QSqlRelationalTableModel()
+        self.docsModel = QSqlTableModel()
+        # self.docsModel = QSqlRelationalTableModel()
         self.docsModel.setTable('DOCUMENTS')
-        self.docsModel.setRelation(2, QSqlRelation('THEMES', 'ID', 'NAME'))
+        # self.docsModel.setRelation(2, QSqlRelation('THEMES', 'ID', 'NAME'))
         self.docsModel.setEditStrategy(QSqlTableModel.OnManualSubmit)
         self.docsModel.select()
         self.docsModel.setHeaderData(1, Qt.Horizontal, "Путь к файлу")
         self.docsModel.setHeaderData(2, Qt.Horizontal, "Тема")
 
         self.ui.docsView.setModel(self.docsModel)
-        self.ui.docsView.setItemDelegate(QSqlRelationalDelegate(self.ui.docsView))
+        # self.ui.docsView.setItemDelegate(QSqlRelationalDelegate(self.ui.docsView))
         self.ui.docsView.horizontalHeader().setStretchLastSection(True)
 
         self.updateThemes()
@@ -56,8 +57,10 @@ class MainWindow(QMainWindow):
             if item is self.root_theme:
                 self.docsModel.setFilter(None)
             else:
-                pid = item.data(0, Qt.UserRole)[0]
-                self.docsModel.setFilter('ID_THEME = {}'.format(pid))
+                # pid = item.data(0, Qt.UserRole)[0]
+                # self.docsModel.setFilter('ID_THEME = {}'.format(pid))
+                name = item.data(0, Qt.UserRole)[1]
+                self.docsModel.setFilter('THEME = "{}"'.format(name))
 
     def updateThemes(self):
         self.ui.themes.clear()
@@ -79,6 +82,8 @@ class MainWindow(QMainWindow):
         self.ui.themes.expandAll()
 
     def add(self):
+        d = DocDialog()
+        d.exec_()
         pass
 
     def delete(self):

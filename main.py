@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from PySide.QtCore import *
-from PySide.QtGui import *
+# from PySide.QtCore import *
+# from PySide.QtGui import *
 import sys
 
 from mainwindow import *
@@ -27,8 +27,9 @@ if __name__ == '__main__':
     #             'contents TEXT'  # содержание
     #             ');')
 
-
-    query.exec_('DROP TABLE DOCUMENTS')
+    #
+    # query.exec_('DROP TABLE DOCUMENTS')
+    # print(query.lastError())
     #
     # # Тема работы (монография, работа в журнале, и т.п.)
     # query.exec_('CREATE TABLE THEMES('
@@ -36,18 +37,31 @@ if __name__ == '__main__':
     #             'NAME TEXT NOT NULL'
     #             ');')
 
-    query.exec_('CREATE TABLE DOCUMENTS('
-                'ID INTEGER PRIMARY KEY AUTOINCREMENT,'
-                'PATH       TEXT    NOT NULL,'  # Путь к файлу работы
-                'ID_THEME INTEGER,'  # Тема работы
-                'NAME TEXT,'  # Название работы
-                'AUTHOR TEXT,'  # Автор
-                'YEAR TEXT,'  # Год издания
-                'ANNOTATION TEXT,'  # Аннотация
-                'TABLEOFCONTENTS TEXT,'  # Оглавление
-                'REFERENCES TEXT'  # Список литературы
-                'FOREIGN KEY(ID_THEME) REFERENCES THEMES(ID)'
-                ');')
+    # query.exec_('CREATE TABLE DOCUMENTS('
+    #             'ID INTEGER PRIMARY KEY AUTOINCREMENT,'
+    #             'PATH       TEXT    NOT NULL,'  # Путь к файлу работы
+    #             'ID_THEME INTEGER,'  # Тема работы
+    #             'NAME TEXT,'  # Название работы
+    #             'AUTHOR TEXT,'  # Автор
+    #             'YEAR TEXT,'  # Год издания
+    #             'ANNOTATION TEXT,'  # Аннотация
+    #             'TABLEOFCONTENTS TEXT,'  # Оглавление
+    #             'REFERENCES TEXT'  # Список литературы
+    #             'FOREIGN KEY(ID_THEME) REFERENCES THEMES(ID)'
+    #             ');')
+
+    # query.exec_('CREATE TABLE DOCUMENTS('
+    #             'ID INTEGER PRIMARY KEY AUTOINCREMENT,'
+    #             'PATH       TEXT    NOT NULL,'  # Путь к файлу работы
+    #             'THEME TEXT,'  # Тема работы
+    #             'NAME TEXT,'  # Название работы
+    #             'AUTHOR TEXT,'  # Автор
+    #             'YEAR TEXT,'  # Год издания
+    #             'ANNOTATION TEXT,'  # Аннотация
+    #             'TABLEOFCONTENTS TEXT,'  # Оглавление
+    #             'BIBLIOGRAPHY TEXT'  # Список литературы
+    #             ');')
+    # print(query.lastError())
 
 
     # print(query.lastError())
@@ -56,9 +70,9 @@ if __name__ == '__main__':
     # query.exec_("INSERT INTO THEMES (NAME) VALUES ('Журналы')")
     # print(query.lastError())
 
-    # query.exec_("INSERT INTO DOCUMENTS (PATH, ID_THEME) VALUES ('doc.doc', '2')")
-    # query.exec_("INSERT INTO DOCUMENTS (PATH, ID_THEME) VALUES ('doc2.doc', '1')")
-    # query.exec_("INSERT INTO DOCUMENTS (PATH, ID_THEME) VALUES ('doc3.doc', '2')")
+    # query.exec_("INSERT INTO DOCUMENTS (PATH, THEME) VALUES ('doc.doc', 'Монография')")
+    # query.exec_("INSERT INTO DOCUMENTS (PATH, THEME) VALUES ('doc2.doc', 'Журналы')")
+    # query.exec_("INSERT INTO DOCUMENTS (PATH, THEME) VALUES ('doc3.doc', 'Монография')")
     # print(query.lastError())
 
 
