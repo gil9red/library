@@ -58,6 +58,8 @@
     <addaction name="actionAdd"/>
     <addaction name="actionDelete"/>
     <addaction name="separator"/>
+    <addaction name="actionEditThemes"/>
+    <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuFile"/>
@@ -79,6 +81,8 @@
    <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
    <addaction name="separator"/>
+   <addaction name="actionEditThemes"/>
+   <addaction name="separator"/>
    <addaction name="actionQuit"/>
   </widget>
   <action name="actionAdd">
@@ -94,6 +98,14 @@
   <action name="actionQuit">
    <property name="text">
     <string>Выход</string>
+   </property>
+  </action>
+  <action name="actionEditThemes">
+   <property name="text">
+    <string>Редактирование списка тем</string>
+   </property>
+   <property name="toolTip">
+    <string>Редактирование списка тем</string>
    </property>
   </action>
  </widget>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Mon May 25 17:36:02 2015
+# Created: Mon May 25 18:35:06 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -48,13 +48,19 @@ class Ui_MainWindow(object):
         self.actionDelete.setObjectName("actionDelete")
         self.actionQuit = QtGui.QAction(MainWindow)
         self.actionQuit.setObjectName("actionQuit")
+        self.actionEditThemes = QtGui.QAction(MainWindow)
+        self.actionEditThemes.setObjectName("actionEditThemes")
         self.menuFile.addAction(self.actionAdd)
         self.menuFile.addAction(self.actionDelete)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.actionEditThemes)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionQuit)
         self.menubar.addAction(self.menuFile.menuAction())
         self.toolBar.addAction(self.actionAdd)
         self.toolBar.addAction(self.actionDelete)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionEditThemes)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.actionQuit)
 
@@ -69,4 +75,6 @@ class Ui_MainWindow(object):
         self.actionAdd.setText(QtGui.QApplication.translate("MainWindow", "Добавить работу", None, QtGui.QApplication.UnicodeUTF8))
         self.actionDelete.setText(QtGui.QApplication.translate("MainWindow", "Удалить работу", None, QtGui.QApplication.UnicodeUTF8))
         self.actionQuit.setText(QtGui.QApplication.translate("MainWindow", "Выход", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionEditThemes.setText(QtGui.QApplication.translate("MainWindow", "Редактирование списка тем", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionEditThemes.setToolTip(QtGui.QApplication.translate("MainWindow", "Редактирование списка тем", None, QtGui.QApplication.UnicodeUTF8))
 
