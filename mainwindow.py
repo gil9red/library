@@ -84,7 +84,9 @@ class MainWindow(QMainWindow):
     def add(self):
         d = DocDialog()
         d.exec_()
-        pass
+
+        # TODO: обновлять когда диалог закрывается на Ок
+        self.docsModel.select()
 
     def delete(self):
         pass

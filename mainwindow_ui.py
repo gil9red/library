@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mainwindow.ui'
 #
-# Created: Mon May 25 14:07:18 2015
+# Created: Mon May 25 17:36:02 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
         self.themes.setIndentation(10)
         self.themes.setObjectName("themes")
         self.docsView = QtGui.QTableView(self.splitter)
+        self.docsView.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
+        self.docsView.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.docsView.setObjectName("docsView")
         self.verticalLayout.addWidget(self.splitter)
         MainWindow.setCentralWidget(self.centralwidget)

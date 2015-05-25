@@ -30,7 +30,14 @@
         </property>
        </column>
       </widget>
-      <widget class="QTableView" name="docsView"/>
+      <widget class="QTableView" name="docsView">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>

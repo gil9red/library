@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'docdialog.ui'
 #
-# Created: Mon May 25 14:07:18 2015
+# Created: Mon May 25 17:36:03 2015
 #      by: pyside-uic 0.2.15 running on PySide 1.2.2
 #
 # WARNING! All changes made in this file will be lost!

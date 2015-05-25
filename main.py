@@ -14,7 +14,7 @@ if __name__ == '__main__':
     if not create_connection():
         sys.exit(1)
 
-    query = QSqlQuery()
+    # query = QSqlQuery()
     # query.exec_('.tables')
     # print(query.result())
     # query.exec_('CREATE TABLE Documents ('
@@ -26,6 +26,12 @@ if __name__ == '__main__':
     #             'annotation TEXT,'  # аннотация
     #             'contents TEXT'  # содержание
     #             ');')
+
+    # TODO: если exec вернул False, значит ошибка при выполнении запроса
+    # TODO: если ошибка выполнения, показывать сообщение с нею
+    # query = QSqlQuery()
+    # b = query.exec_('SELECT * FROM DOCUMENTS')
+    # print(b, query.lastError())
 
     #
     # query.exec_('DROP TABLE DOCUMENTS')
